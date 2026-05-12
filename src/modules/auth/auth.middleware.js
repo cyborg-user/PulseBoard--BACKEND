@@ -4,6 +4,9 @@ import User from "./auth.model.js"
 
 
 const authenticate = async (req, res, next) => {
+console.log("entering")
+
+
     console.log(req.headers.authorization)
 
     let token

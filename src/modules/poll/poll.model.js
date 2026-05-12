@@ -1,9 +1,10 @@
+// import { required } from "joi"
 import mongoose from "mongoose"
 
 const questionSchema = new mongoose.Schema({
     question: String,
     required: Boolean,
-    options : [Strings]
+    options : [String]
 
 })
 
@@ -13,7 +14,8 @@ const pollSchema = new mongoose.Schema({
     descriptions: String,
     createdBy:{
         type: mongoose.Schema.Types.ObjectId,
-        ref:"User"
+        ref:"User",
+        required:true,
     },
     questions:[questionSchema],
 
@@ -31,4 +33,4 @@ const pollSchema = new mongoose.Schema({
 },{timestamps:true}
 )
 
-export default mongoose.model("poll",pollSchema)
+export default mongoose.model("Poll",pollSchema)

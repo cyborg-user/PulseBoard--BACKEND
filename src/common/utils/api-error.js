@@ -22,6 +22,13 @@ class ApiError extends Error {
   static notfound(message = "notfound") {
     return new ApiError(412, message);
   }
+static expires(message = "expired poll") {
+    return new ApiError(412, message);
+  }
+  static duplicate(message = "already submitted") {
+    return new ApiError(412, message);
+  }
+
 }
 
 export default ApiError;

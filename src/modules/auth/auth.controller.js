@@ -27,6 +27,8 @@ const login =async(req,res)=>{
 }
 
 const refreshToken=async (req,res)=>{
+
+    console.log("enter refresh token rooute")
     const token =req.cookies?.refreshToken
     const {accessToken}= await authService.refresh(token)
     ApiResponse.ok(res, "token refreshed",{ accessToken})
